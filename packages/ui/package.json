@@ -4,13 +4,14 @@
   "private": true,
   "scripts": {
     "ui": "pnpm dlx shadcn@latest",
-    "lint": "eslint ."
+    "format-and-lint": "biome check ./src",
+    "format-and-lint:fix": "biome check --write ./src"
   },
   "peerDependencies": {
     "react": "^18"
   },
   "devDependencies": {
-    "@repo/eslint-config": "workspace:*",
+    "@biomejs/biome": "1.9.4",
     "@repo/typescript-config": "workspace:*",
     "@types/node": "catalog:",
     "@types/react": "catalog:react18",
@@ -25,6 +26,8 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "lucide-react": "catalog:",
+    "next-themes": "^0.4.4",
+    "sonner": "^1.7.2",
     "tailwind-merge": "^2.3.0",
     "tailwindcss-animate": "^1.0.7"
   },

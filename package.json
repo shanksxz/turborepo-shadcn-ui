@@ -6,13 +6,17 @@
   "scripts": {
     "build": "turbo build",
     "dev": "turbo dev",
-    "lint": "turbo lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "ui": "pnpm --filter @repo/ui ui"
+    "format-and-lint": "turbo format-and-lint --continue --",
+    "format-and-lint:fix": "turbo format-and-lint:fix --continue --",
+    "ui": "pnpm --filter @repo/ui ui",
+    "db:migrate": "turbo db:migrate",
+    "db:studio": "turbo db:studio",
+    "db:generate": "turbo db:generate"
   },
   "devDependencies": {
-    "@repo/eslint-config": "workspace:*",
-    "@repo/typescript-config": "workspace:*",
+    "@repo/ui": "workspace:*",
+    "@repo/database": "workspace:*",
+    "@biomejs/biome": "1.9.4",
     "prettier": "catalog:",
     "turbo": "2.1.1"
   },

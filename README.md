@@ -1,31 +1,50 @@
-> [!WARNING]
-> This repo is no longer mantained since the shadcn CLI [now supports monorepos natively](https://ui.shadcn.com/docs/monorepo), thanks for using the template.
-
 # Turborepo starter with shadcn/ui
 
-![Static Badge](https://img.shields.io/badge/shadcn%2Fui-2.1.2-blue?link=https%3A%2F%2Fgithub.com%2Fshadcn%2Fui)
-
-This is Turborepo starter with shadcn/ui pre-configured.
-
-> [!NOTE]
-> This example uses `pnpm` as package manager.
-
-[npm version](https://github.com/dan5py/turborepo-shadcn-ui/tree/npm)
-[bun version](https://github.com/dan5py/turborepo-shadcn-ui/tree/bun)
+A full-stack monorepo template using:
+- 🏎️ [Turborepo](https://turborepo.org/)
+- ⚛️ [Next.js 15](https://nextjs.org/)
+- 🔐 [Better Auth](https://better-auth.com/)
+- 💾 [Drizzle ORM](https://orm.drizzle.team/)
+- 🎨 [shadcn/ui](https://ui.shadcn.com/)
+- 🎯 [Biome](https://biomejs.dev/)
 
 ## Using this example
 
 Clone the repository:
 
-```sh
-git clone https://github.com/dan5py/turborepo-shadcn-ui.git
+```bash
+# clone repository
+https://github.com/shanksxz/turborepo-shadcn-ui
+cd turborepo-shadcn-ui
+
+# install dependencies
+pnpm install
+
+# configure environment
+cp .env.example .env
 ```
 
-Install dependencies:
+### Database setup
+```bash
+# generate schema
+pnpm db:generate
 
-```sh
-cd turborepo-shadcn-ui
-pnpm install
+# run migrations
+pnpm db:migrate
+
+# (Optional) Open Drizzle Studio
+pnpm db:studio
+```
+
+### Start the development server
+
+```bash
+# start development server
+pnpm dev
+
+# format and lint
+pnpm format-and-lint
+pnpm format-and-lint:f
 ```
 
 ### Add ui components
@@ -36,26 +55,31 @@ Use the pre-made script:
 pnpm ui add <component-name>
 ```
 
-> This works just like the `shadcn/ui` CLI.
-
-### Add a new app
-
-Turborepo offer a simple command to add a new app:
-
-```sh
-pnpm turbo gen workspace --name <app-name>
+## Project structure
+```bash
+├── apps/
+│   └── web/              
+├── packages/
+│   ├── ui/              
+│   ├── database/     
+│   ├── typescript-config/
+├── .env.example
+├── biome.json
+├── package.json
+└── turbo.json
 ```
 
-This will create a new empty app in the `apps` directory.
+## Environment variables
 
-If you want, you can copy an existing app with:
-
-```sh
-pnpm turbo gen workspace --name <app-name> --copy
+```bash
+DATABASE_URL=           # PostgreSQL connection URL
+GITHUB_ID=             # GitHub OAuth ID
+GITHUB_SECRET=         # GitHub OAuth Secret
+BETTERAUTH_SECRET=       # NextAuth.js secret
+BETTERAUTH_URL=          # NextAuth.js URL
 ```
 
-> [!NOTE]
-> Remember to run `pnpm install` after copying an app.
+
 
 ## What's inside?
 
@@ -63,9 +87,9 @@ This Turborepo includes the following packages/apps:
 
 ### Apps and Packages
 
-- `docs`: a [Next.js](https://nextjs.org/) app
+- `web`: a [Next.js](https://nextjs.org/) app
 - `@repo/ui`: a stub React component library (🚀 powered by **shadcn/ui**)
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
+- `@repo/database`: a [Dirzzle](https://orm.drizzle.team/) client for PostgreSQL
 - `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
 
 Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
@@ -75,8 +99,7 @@ Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
 This Turborepo has some additional tools already setup for you:
 
 - [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
+- [Biome](https://biomejs.dev/) for formatting and linting
 
 ### Build
 
