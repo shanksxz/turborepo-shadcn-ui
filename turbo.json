@@ -4,8 +4,8 @@
     "DATABASE_URL",
     "GITHUB_ID",
     "GITHUB_SECRET",
-    "NEXAUTH_SECRET",
-    "NEXTAUTH_URL"
+    "BETTER_AUTH_URL",
+    "BETTER_AUTH_SECRET"
   ],
   "globalPassThroughEnv": [
     "NODE_ENV"
