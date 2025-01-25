@@ -11,12 +11,14 @@
     "ui": "pnpm --filter @repo/ui ui",
     "db:migrate": "turbo db:migrate",
     "db:studio": "turbo db:studio",
-    "db:generate": "turbo db:generate"
+    "db:generate": "turbo db:generate",
+    "prepare": "husky"
   },
   "devDependencies": {
-    "@repo/ui": "workspace:*",
-    "@repo/database": "workspace:*",
     "@biomejs/biome": "1.9.4",
+    "@repo/database": "workspace:*",
+    "@repo/ui": "workspace:*",
+    "husky": "^9.1.7",
     "prettier": "catalog:",
     "turbo": "2.1.1"
   },
