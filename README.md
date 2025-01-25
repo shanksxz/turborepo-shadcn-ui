@@ -7,6 +7,8 @@ A full-stack monorepo template using:
 - 💾 [Drizzle ORM](https://orm.drizzle.team/)
 - 🎨 [shadcn/ui](https://ui.shadcn.com/)
 - 🎯 [Biome](https://biomejs.dev/)
+- 🚀 [trpc](https://trpc.io/)
+
 
 ## Using this example
 
@@ -44,7 +46,7 @@ pnpm dev
 
 # format and lint
 pnpm format-and-lint
-pnpm format-and-lint:f
+pnpm format-and-lint:fix
 ```
 
 ### Add ui components
@@ -88,6 +90,7 @@ This Turborepo includes the following packages/apps:
 ### Apps and Packages
 
 - `web`: a [Next.js](https://nextjs.org/) app
+- `t3-with-trpc`: a [trpc](https://trpc.io/) example
 - `@repo/ui`: a stub React component library (🚀 powered by **shadcn/ui**)
 - `@repo/database`: a [Dirzzle](https://orm.drizzle.team/) client for PostgreSQL
 - `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
