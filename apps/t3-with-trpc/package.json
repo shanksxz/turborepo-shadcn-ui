@@ -31,6 +31,7 @@
     "zod": "^3.23.3"
   },
   "devDependencies": {
+    "@biomejs/biome": "1.9.4",
     "@repo/database": "workspace:*",
     "@repo/ui": "workspace:*",
     "@types/node": "^20.14.10",
